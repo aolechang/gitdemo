@@ -1,21 +1,22 @@
 
-vs_code -> git_lens
+vs_code -> git_lens, git history
 
+-----------------------------------------------------------------------------------
 1. initialize a local file to a git repo (建立 "工作区")
 
 git init (from the root of that folder)
 
-
+-----------------------------------------------------------------------------------
 2. add the files to **staging area** （--add--> "缓存区"）
 
 git add. (add 所有工作区文件） or git add .\filename (add 某些 工作区 文件到 缓存区)
 
-
+-----------------------------------------------------------------------------------
 3. commit the file from **staging area** （"缓存区" --commit--> "归档区"）
 
 git commit -m "adding comment here"
 
-
+-----------------------------------------------------------------------------------
 4. adding a remote repo and push the commit ("归档区" --push--> remote repo)
 
 git remote add origin url (means add a varible 'origin' = url, adding a remote repo)
@@ -25,16 +26,19 @@ git push -u origin master (将本地归档区 全部文件提交到 origin 的 m
 git push (用过 -u 之后直接push就ok 不用加origin master)
 git push origin master
 
-
+-----------------------------------------------------------------------------------
 5. 查看本地仓库 commit 状态
 
 git status
 
+-----------------------------------------------------------------------------------
 6. 查看 commit 历史记录， 本地branch 与 远端branch
 
 git log (git history extension from vscode)
 git relog (reset 之后仍能看到 被撤销的commit hash code)
 
+
+-----------------------------------------------------------------------------------
 7.版本 reset
 
 git reset --hard commit_hash_code (工作区 归档区 缓存区 全部版本回滚)
@@ -42,16 +46,21 @@ git reset --mixed commit_hash_code (归档区 缓存区 版本回滚)
 git reset --soft commit_hash_code (归档区 版本回滚)
 
 
+-----------------------------------------------------------------------------------
 8. 移除某一 commit 版本 （revert）
 
 git revert (相当于进行了新的commit )
 
+
+-----------------------------------------------------------------------------------
 9. 创建分支
 
 git branch -v (查看当前 branch)
 
 git checkout -b branch_name (在本地 创建 "branch_name" 的分支)
 
+
+-----------------------------------------------------------------------------------
 9.1 远端分支
 
 git fetch (获取远端分支 以及版本)
@@ -61,12 +70,14 @@ git merge 或者 在远端版本上建立新的分支
 git push origin remote_branch_name (**本地 branch_name 要与 remote_branch_name 一致**)
 
 
-
+-----------------------------------------------------------------------------------
 10. 合并 branch， master (本地)
 
 git checkout master (进入 master)
 git merge branch_name (将 branch_name 合并到 master)
 
+
+-----------------------------------------------------------------------------------
 11. 冲突
 
 如果两个 branch A & B 有冲突
@@ -75,6 +86,7 @@ head： 当前版本内容
 reset --hard 到merge之前的版本 （即上一次 merge）
 
 
+-----------------------------------------------------------------------------------
 12. remote master 版本领先 本地版本
 
 git pull (记得先 config git remote)
@@ -85,3 +97,9 @@ git pull = ( git fetch + git merge origin/branch_name)
 如果 remote 版本进行了更新 本地是感知不到（git history）变化的, git fetch 可以获取 remote 的更新
 
 
+-----------------------------------------------------------------------------------
+13. 删除 branch
+
+git branch –d 本地分支名
+
+git push origin –-delete 远端分支名
