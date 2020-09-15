@@ -1,0 +1,53 @@
+
+vs_code -> git_lens
+
+1. initialize a local file to a git repo (建立 "工作区")
+
+git init (from the root of that folder)
+
+
+2. add the files to **staging area** （--add--> "缓存区"）
+
+git add. (add 所有工作区文件） or git add .\filename (add 某些 工作区 文件到 缓存区)
+
+
+3. commit the file from **staging area** （"缓存区" --commit--> "归档区"）
+
+git commit -m "adding comment here"
+
+
+4. adding a remote repo and push the commit ("归档区" --push--> remote repo)
+
+git remote add origin url (means add a varible 'origin' = url, adding a remote repo)
+git remote rm origin (if you want to remote origin)
+
+git push -u origin master (将本地归档区 全部文件提交到 origin 的 master branch)
+git push (用过 -u 之后直接push就ok 不用加origin master)
+git push origin master
+
+
+5. 查看本地仓库 commit 状态
+
+git status
+
+6. 查看 commit 历史记录， 本地branch 与 远端branch
+
+git log (git history extension from vscode)
+git relog (reset 之后仍能看到 被撤销的commit hash code)
+
+7.版本 reset
+
+git reset --hard commit_hash_code (工作区 归档区 缓存区 全部版本回滚)
+git reset --mixed commit_hash_code (归档区 缓存区 版本回滚)
+git reset --soft commit_hash_code (归档区 版本回滚)
+
+
+8. 移除某一 commit 版本 （revert）
+
+git revert (相当于进行了新的commit )
+
+
+
+
+
+
