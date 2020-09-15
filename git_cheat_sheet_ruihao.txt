@@ -58,6 +58,8 @@ git fetch (获取远端分支 以及版本)
 
 git merge 或者 在远端版本上建立新的分支
 
+git push origin remote_branch_name (**本地 branch_name 要与 remote_branch_name 一致**)
+
 
 
 10. 合并 branch， master (本地)
