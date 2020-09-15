@@ -52,11 +52,34 @@ git branch -v (查看当前 branch)
 
 git checkout -b branch_name (在本地 创建 "branch_name" 的分支)
 
+9.1 远端分支
+
+git fetch (获取远端分支 以及版本)
+
+git merge 或者 在远端版本上建立新的分支
+
+
+
 10. 合并 branch， master (本地)
 
 git checkout master (进入 master)
 git merge branch_name (将 branch_name 合并到 master)
 
+11. 冲突
 
+如果两个 branch A & B 有冲突
+head： 当前版本内容
+
+reset --hard 到merge之前的版本 （即上一次 merge）
+
+
+12. remote master 版本领先 本地版本
+
+git pull (记得先 config git remote)
+
+git pull = ( git fetch + git merge origin/branch_name)
+
+*git fetch (默认 fetch origin)
+如果 remote 版本进行了更新 本地是感知不到（git history）变化的, git fetch 可以获取 remote 的更新
 
 
