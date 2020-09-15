@@ -46,6 +46,11 @@ git reset --soft commit_hash_code (归档区 版本回滚)
 
 git revert (相当于进行了新的commit )
 
+9. 创建分支
+
+git branch -v (查看当前 branch)
+
+git checkout -b branch_name (在本地 创建 "branch_name" 的分支)
 
 
 
